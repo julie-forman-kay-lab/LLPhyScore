@@ -1,2 +1,2 @@
-./GridCache
-./data/processed/combined_human_grid.pkl
+GridCache/
+data/processed/combined_human_grid.pkl
