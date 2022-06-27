@@ -117,7 +117,7 @@ rm -rf LLPhyScore_venv
 ![project workflow](workflow.png)
 
 ## Modules
-The "src" directory contains the Python modules for building and training of LLPhyScore.
+The `src` directory contains the Python modules for building and training of LLPhyScore.
 
 ### Loader.py
 This is the module that I wrote to load input protein sequences. Each protein sequence is converted to a 'grid' representation with multiple levels as shown in this figure.
@@ -145,6 +145,36 @@ This is the module to store directory configurations.
 
 ### Utils.py
 This is the module to store utility functions and classes.
+
+## Dataset
+The `data/raw` directory contains the raw datasets used to train LLPhyScore algorithm:  
+- `TRUE_POSITIVE_SEQUENCES_UNTAGGED_20191126.fasta` contains 565 curated LLPS-positive sequences.
+- `PDB.TOTALSET.fasta` contains 16794 PDB sequences collected from high-resolution (≤2.0 A) structures in PDB database.
+- `uniprot_reference_human_24NOV2019.fasta` contains 20380 human proteome sequences collected from Unitprot.
+
+The `data/processed/total` directory contains processed datasets generated from raw datasets:
+- `tp_seq_tags.pkl` contains tags of 565 LLPS-positive sequences.
+- `tp_seq_seqs.pkl` contains sequences of 565 LLPS-positive sequences.
+- `tp_seq_groups.pkl` contains clustered groups of 565 LLPS-positive sequences, clustering on sequence similarity.
+- `pdb_seq_tags.pkl` contains tags of randomly selected 3406 PDB sequences.
+- `pdb_seq_seqs.pkl` contains sequences of randomly selected 3406 PDB sequences.
+- `human_seq_tags.pkl` contains tags of randomly selected 3406 human sequences.
+- `human_seq_seqs.pkl` contains sequences of randomly selected 3406 human sequences.
+
+The `data/cleaned` directory contains LLPhyScore raw scores of human/PDB proteome against different models, for calculation of Z-score and percentile rankings:
+- `human_g2w_scores_using_PDBweight.csv` contains scores of human proteome sequences agains "PDB" model.
+- `human_g2w_scores_using_humanweight.csv` contains scores of human proteome sequences agains "human" model.
+- `human_g2w_scores_using_human+PDBweight.csv` contains scores of human proteome sequences agains "human+PDB" model.
+- `PDB_g2w_scores_using_PDBweight.csv` contains scores of PDB proteome sequences agains "PDB" model.
+- `PDB_g2w_scores_using_humanweight.csv` contains scores of PDB proteome sequences agains "human" model.
+- `PDB_g2w_scores_using_human+PDBweight.csv` contains scores of PDB proteome sequences agains "human+PDB" model.
+
+## Model
+The `model` directory contains the trained models for 8 selected features ('protein-water', 'protein-carbon', 'hydrogen bond (long-range)', 'pi-pi (long-range)', 'disorder (long)', 'K-Beta similarity', 'disorder (short)', 'electrostatic (short-range)'), using different negative training sets:
+- `trained_weights.8FEATURES.PDB.pkl` is the model trained using PDB sequences as negative dataset.
+- `trained_weights.8FEATURES.human.pkl` is the model trained using human sequences as negative dataset.
+- `trained_weights.8FEATURES.human+PDB.pkl` is the model trained using human+PDB sequences as negative dataset.
+- `random_weight.pkl` is the randomly initialized model used during training.
 
 ## Online deployment
 Currently, this tool is only deployed as an offline Python script. To run it, see above "Usage Example" section. Online deployment of this tool as a web-app is on the way.
