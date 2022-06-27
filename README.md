@@ -12,11 +12,11 @@ This tool uses machine learning methods draw biophysical insights from currently
 
 ## Installation
 Follow these steps to install LLPhyScore:  
-Step 1: Make sure you have Python3 in your computer.
+**Step 1**: Make sure you have Python3 in your computer.
 - How to check and/or install Python3 version - https://realpython.com/installing-python/
 - Official Python website - https://www.python.org/
   
-Step 2: A Python3 environment with pre-installed libraries (numpy, scipy, pandas, tqdm, scikit-learn) is required to run LLPhyScore in your machine. If you don't want to change your default Python3 environment, please do the following to create a virtual environment:  
+**Step 2**: A Python3 environment with pre-installed libraries (numpy, scipy, pandas, tqdm, scikit-learn) is required to run LLPhyScore in your machine. If you don't want to change your default Python3 environment, please do the following to create a virtual environment:  
 - Make sure you have pip3 installed in your Python3 environment; If not, install pip3 - 
 https://ehmatthes.github.io/pcc/chapter_12/installing_pip.html
 - In your terminal, install `virtualenv`, a tool to create isolated Python environments. (If you already have `virtualenv` installed, skip this step.)
@@ -33,22 +33,22 @@ https://ehmatthes.github.io/pcc/chapter_12/installing_pip.html
     source LLPhyScore_venv/bin/activate
     ```
 
-Step 3: In your preferred environment (either your default Python3 environment, or a virtual environment as set up in Step 2), use pip to install Python library dependencies.
+**Step 3**: In your preferred environment (either your default Python3 environment, or a virtual environment as set up in Step 2), use pip to install Python library dependencies.
 ```
 pip3 install -r requirements.txt
 ```
 
-Step 4: Clone from the official repository:  
+**Step 4**: Clone from the official repository:  
 ```
 git clone https://github.com/julie-forman-kay-lab/LLPhyScore.git
 ```
 
-Step 5:  Navigate to the new LLPhyScore folder:  
+**Step 5**:  Navigate to the new LLPhyScore folder:  
 ```
 cd LLPhyScore
 ```
 
-Step 6: Unpack the standalone package:
+**Step 6**: Unpack the standalone package:
 ```
 cd standalone_package
 tar -xvf LLPhyScore-standalone-20220627.tar.gz
@@ -57,17 +57,17 @@ tar -xvf LLPhyScore-standalone-20220627.tar.gz
 ## Usage
 Follow these steps to use the LLPhyScore (standalone package) on example fasta file to predict the LLPS propensity of FUS:  
 
-Step 1: Navigate to the standalone package folder:
+**Step 1**: Navigate to the standalone package folder:
 ```
 cd standalone_package/LLPhyScore
 ```
 
-Step 2: Run LLPhyScore on the example fasta file. You should see output scores for example sequences.
+**Step 2**: Run LLPhyScore on the example fasta file. You should see output scores for example sequences.
 ```
 python3 LLPhyScore_standalone.py -i ./example.fasta
 ```
 
-Step 3: To run LLPhyScore on your other fasta files, replace `./example.fasta` with your fasta file's path in Step 4. You can only run one file at a time.
+**Step 3**: To run LLPhyScore on your other fasta files, replace `./example.fasta` with your fasta file's path in Step 4. You can only run one file at a time.
 - There are three models trained on three different negative datasets to use: (i) trained on human+PDB; (ii) trained on human proteome only; (iii) trained on PDB only. Default option is (i) human+PDB, but you can change which model to use by passing your wanted type to argument `-m`. 
     ```
     # using (human+PDB) model. (Default option)
@@ -104,7 +104,7 @@ Step 3: To run LLPhyScore on your other fasta files, replace `./example.fasta` w
     python3 LLPhyScore_standalone.py -i ./example.fasta -o your_file_name.csv
     ```
 
-Step 4: After running, exit or delete your virtual environment.
+**Step 4**: After running, exit or delete your virtual environment.
 ```
 # exit virtual environment
 deactivate
