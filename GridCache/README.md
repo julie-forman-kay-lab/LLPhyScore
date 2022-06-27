@@ -1,1 +1,1 @@
-# Note: GridCache files are too large to upload to Git. Please contact authors to get them.
+# Note: GridCache files are too large to upload to Git. Please contact author (forman@sickkids.ca) to get them.
