@@ -382,7 +382,7 @@ class GridScore:
 
 
 def calculate_modified_zscore(x, a):
-    """calculate the modified z-score of x against a.
+    """calculate the modified z-score of x against a (to account for skewed normal distribution).
     
     Args:
         x (float): raw value.

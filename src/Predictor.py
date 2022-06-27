@@ -360,7 +360,12 @@ def run_fasta_scorer(args):
     else:
         output_scores = output_scores.set_index("tag")
         pd.set_option('display.max_rows', None)
-        print(output_scores.stack())
+        if args.score_type=="all":
+            print(output_scores.stack(-2))
+        elif args.score_type in ["raw", "percentile", "zscore", "modified_zscore"]:
+            print(output_scores.stack(-1))
+        elif args.score_type in ["top100_residue_sum", "residue_level"]:
+            print(output_scores)
         pd.set_option('display.max_rows', 30)
 
 
