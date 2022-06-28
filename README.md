@@ -176,6 +176,13 @@ The `model` directory contains the trained models for 8 selected features ('prot
 - `trained_weights.8FEATURES.human+PDB.pkl` is the model trained using human+PDB sequences as negative dataset.
 - `random_weight.pkl` is the randomly initialized model used during training.
 
+## Clustering
+The `clustering` directory contains the code and data for Jaccard-similarity-based clustering of LLPS-positive sequences:
+- `Dipeptide.py` contains the code to calculate the pair-wise Jaccard similarity for all sequence-sequence pairs within any given sequence or fasta file. 
+- `Cluster_seqs.py` performs hieararchical clustering of LLPS-positive sequences based on pair-wise Jaccard similarity.
+- `Plot_cluster.py` contains the code to visualize all sequence clusters.
+- `clustering_data` folder contains the input and output data of sequence clustering.
+
 ## Online deployment
 Currently, this tool is only deployed as an offline Python script. To run it, see above "Usage Example" section. Online deployment of this tool as a web-app is on the way.
 
