@@ -188,5 +188,5 @@ Currently, this tool is only deployed as an offline Python script. To run it, se
 
 ## Contact
 **Authors**: Hao Cai, Robert M. Vernon, Julie D. Forman-Kay  
-**Affliation**: JFK lab, Molecular Medicine Program, SickKids Hospital, Toronto, ON M5G 0A4, Canada
+**Affliation**: JFK lab, Molecular Medicine Program, SickKids Hospital, Toronto, ON M5G 0A4, Canada  
 **Email**: forman@sickkids.ca
