@@ -15,17 +15,26 @@ Follow these steps to install LLPhyScore:
 **Step 1**: Make sure you have Python3 in your computer.
 - How to check and/or install Python3 version - https://realpython.com/installing-python/
 - Official Python website - https://www.python.org/
-  
-**Step 2**: A Python3 environment with pre-installed libraries (numpy, scipy, pandas, tqdm, scikit-learn) is required to run LLPhyScore in your machine. If you don't want to change your default Python3 environment, please do the following to create a virtual environment:  
+
+**Step 2**: Clone from the official repository:  
+```
+git clone https://github.com/julie-forman-kay-lab/LLPhyScore.git
+```
+
+**Step 3**:  Navigate to the new LLPhyScore folder:  
+```
+cd LLPhyScore
+```
+
+**Step 4**: A Python3 environment with pre-installed libraries (numpy, scipy, pandas, tqdm, scikit-learn) is required to run LLPhyScore in your machine. If you don't want to change your default Python3 environment, please do the following to create a virtual environment:  
 - Make sure you have pip3 installed in your Python3 environment; If not, install pip3 - 
 https://ehmatthes.github.io/pcc/chapter_12/installing_pip.html
 - In your terminal, install `virtualenv`, a tool to create isolated Python environments. (If you already have `virtualenv` installed, skip this step.)
     ```
     pip3 install virtualenv
     ```
-- In your terminal, navigate to the same directory where this README file is, then create a virtual environment named "LLPhyScore_venv".  
+- In your terminal, create a virtual environment named "LLPhyScore_venv".  
     ```
-    cd LLPhyScore/
     virtualenv LLPhyScore_venv
     ```
 - Activate "LLPhyScore_venv" environment. 
@@ -33,19 +42,9 @@ https://ehmatthes.github.io/pcc/chapter_12/installing_pip.html
     source LLPhyScore_venv/bin/activate
     ```
 
-**Step 3**: In your preferred environment (either your default Python3 environment, or a virtual environment as set up in Step 2), use pip to install Python library dependencies.
+**Step 5**: In your preferred environment (either your default Python3 environment, or a virtual environment as set up in Step 4), use pip to install Python library dependencies.
 ```
 pip3 install -r requirements.txt
-```
-
-**Step 4**: Clone from the official repository:  
-```
-git clone https://github.com/julie-forman-kay-lab/LLPhyScore.git
-```
-
-**Step 5**:  Navigate to the new LLPhyScore folder:  
-```
-cd LLPhyScore
 ```
 
 **Step 6**: Unpack the standalone package:
@@ -77,7 +76,7 @@ python3 LLPhyScore_standalone.py -i ./example.fasta
     # using (PDB) model.
     python3 LLPhyScore_standalone.py -i ./example.fasta -m PDB
     ```
-- There are five options for sequence-level score output: (i) raw score; (ii) percentile ranking; (iii) zscore (iv) modified zscore (v) all score types. Default option is (ii) percentile ranking, but you can change output score type by passing your wanted type to argument `-s`. (All "relative" score types are calculated against human proteome.)
+- There are five options for sequence-level score output: (i) raw score; (ii) percentile ranking; (iii) zscore (iv) modified zscore (v) all score types. Default option is (ii) percentile ranking, but you can change output score type by passing your wanted type to argument `-s`. (All "relative" score types are calculated against a negative proteome dataset that is aligned with the traning model option.)
     ```
     # output raw score
     python3 LLPhyScore_standalone.py -i ./example.fasta -s raw
