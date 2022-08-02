@@ -3,12 +3,12 @@
 **LLPhyScore** is a bioinformatic tool for the prediction of protein phase separation. This repository contains the source code for developing this tool.
 
 ## Problem
-Protein liquid-liquid phase separation (LLPS) has significant roles in many biological processes, including cellular organization, signaling, transcription, biological materials and pathological aggregation. Understanding of this property of proteins are vital to the effective treatment of many neurological diseases, such as Alzheimers's disease and Parkinson's disease. If we can predict a person's brain proteins have mutated and are prone to LLPS, we can prevent it or starting intervening at an early stage of the disease.
+Protein phase separation has significant roles in many biological processes, including cellular organization, signaling, transcription, biological materials and pathological aggregation. Understanding of this property of proteins is key for mechanistic insights into normal function and pathology, including in neurological disorders, required for therapeutic development. 
 
-However, because of the complexity of sequence-structure-property for LLPS proteins, there hasn’t been a consensus so far regarding the physicochemical principles underlying LLPS. It has been found that LLPS can be driven by a wide range of weak forces in physics, including electrostatic interactions, pi-pi stacking, cation-pi interactions, hydrogen bonding, and hydrophobic effect. Therefore it is very difficult to come up with a "perfect" physical model to explain and predict protein LLPS. In addition, the majority of known LLPS proteins are intrinsically disordered proteins (IDPs), and therefore it is very difficult to use MD simulation to study LLPS.
+Many proteins involved in phase separation contain intrinsically disordered protein regions (IDRs) that contribute to phase behavior. It has been found that IDR phase separation can be driven by a wide range of weak physicochemical interactions, including electrostatic interactions, pi-pi stacking, cation-pi interactions, hydrogen bonding, and hydrophobic effect. Therefore, it is very difficult to come up with a "perfect" physical model to explain and predict IDR-driven protein phase separation.
 
 ## Solution
-This tool uses machine learning methods draw biophysical insights from currently known (~500) LLPS sequences. I first developed and trained a sequence embedding system that provides interpretation of the driving forces of LLPS. Then, I trained a supervised classification model on the biophysical embedding on training samples. The predictive model achieved a high accuracy (92%) on the test set, while providing sufficient biological insights for web lab experiments at the same time.
+We developed this tool (LLPhyScore) to provide insights into the sequence-dependence of IDR-driven phase separation and the underlying physicochemical interactions. It is named partly based on the acronym LLPS for liquid-liquid phase separation but is designed to address all phase separation by various mechanisms relying on exchanging interactions of chemical groups within IDRs. It uses machine learning methods to draw biophysical insights from a set of currently known (~500) phase separating IDR sequences. We first developed and trained a sequence embedding system that provides interpretation of the driving forces of IDR phase separation. Then, we trained a supervised classification model on the biophysical embedding on training samples. The predictive model achieved a high accuracy (92%) on the test set, while providing insights for future experiments.
 
 ## Installation
 Follow these steps to install LLPhyScore:  
@@ -185,6 +185,12 @@ The `clustering` directory contains the code and data for Jaccard-similarity-bas
 ## Online deployment
 Currently, this tool is only deployed as an offline Python script. To run it, see above "Usage Example" section. Online deployment of this tool as a web-app is on the way.
 
+## Citation
+If you use LLPhyScore, please cite:
+```
+An interpretable machine learning algorithm to predict disordered protein phase separation based on biophysical interactions
+Hao Cai, Robert M. Vernon, Julie D. Forman-Kay. bioRxiv 2022.07.06.499043 (2022). doi: 10.1101/2022.07.06.499043
+```
 ## Contact
 **Authors**: Hao Cai, Robert M. Vernon, Julie D. Forman-Kay  
 **Affliation**: JFK lab, Molecular Medicine Program, SickKids Hospital, Toronto, ON M5G 0A4, Canada  
