@@ -10,7 +10,10 @@ Many proteins involved in phase separation contain intrinsically disordered prot
 ## Solution
 We developed this tool (LLPhyScore) to provide insights into the sequence-dependence of IDR-driven phase separation and the underlying physicochemical interactions. It is named partly based on the acronym LLPS for liquid-liquid phase separation but is designed to address all phase separation by various mechanisms relying on exchanging interactions of chemical groups within IDRs. It uses machine learning methods to draw biophysical insights from a set of currently known (~500) phase separating IDR sequences. We first developed and trained a sequence embedding system that provides interpretation of the driving forces of IDR phase separation. Then, we trained a supervised classification model on the biophysical embedding on training samples. The predictive model achieved a high accuracy (92%) on the test set, while providing insights for future experiments.
 
-## Installation
+## LLPhyScore Google Colab
+To run LLPhyScore without a local installation, please refer to the Colab version of LLPhyScore [here](https://colab.research.google.com/drive/1RK169q0YevCf2_QvOhr1ngIWSuuoApsM?usp=sharing#scrollTo=gL9Ypxv2Y_q3). Since LLPhyScore is very lightweight, a CPU-only runtime is recommended.
+
+## Local Installation
 Follow these steps to install LLPhyScore:  
 **Step 1**: Make sure you have Python3 in your computer.
 - How to check and/or install Python3 version - https://realpython.com/installing-python/
@@ -182,14 +185,10 @@ The `clustering` directory contains the code and data for Jaccard-similarity-bas
 - `Plot_cluster.py` contains the code to visualize all sequence clusters.
 - `clustering_data` folder contains the input and output data of sequence clustering.
 
-## Online deployment
-Currently, this tool is only deployed as an offline Python script. To run it, see above "Usage Example" section. Online deployment of this tool as a web-app is on the way.
-
 ## Citation
 If you use LLPhyScore, please cite:
 ```
-An interpretable machine learning algorithm to predict disordered protein phase separation based on biophysical interactions
-Hao Cai, Robert M. Vernon, Julie D. Forman-Kay. bioRxiv 2022.07.06.499043 (2022). doi: 10.1101/2022.07.06.499043
+Cai, H.; Vernon, R.M.; Forman-Kay, J.D. An Interpretable Machine-Learning Algorithm to Predict Disordered Protein Phase Separation Based on Biophysical Interactions. Biomolecules 2022, 12, 1131. https://doi.org/10.3390/biom12081131
 ```
 ## Contact
 **Authors**: Hao Cai, Robert M. Vernon, Julie D. Forman-Kay  
